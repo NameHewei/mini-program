@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/menu/menu",
+    "pages/content/content"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "Hewitt",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#1296db",
+    "list": [{
+      "pagePath": "pages/menu/menu",
+      "text": "menu",
+      "iconPath": "images/menu.png",
+      "selectedIconPath": "images/menu-selected.png"
+    }, {
+      "pagePath": "pages/content/content",
+      "text": "content",
+      "iconPath": "images/content.png",
+      "selectedIconPath": "images/content-selected.png"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}
