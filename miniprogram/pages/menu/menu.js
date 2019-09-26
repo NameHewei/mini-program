@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    scanResult: '-'
   },
 
   /**
@@ -62,5 +62,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 扫描二维码
+   */
+  handleScan: function() {
+    wx.scanCode({
+      success: (res) => {
+        this.setData({
+          scanResult: res.result
+        })
+      }
+    })
   }
 })

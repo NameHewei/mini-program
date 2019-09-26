@@ -1,2 +1,16 @@
 <!--pages/content/content.wxml-->
 <text>pages/content/content.wxml</text>
+<view>{{ title }}</view>
+<view wx:for="{{arr}}" wx:key="{{index}}">{{index}},{{item}}</view>
+
+<view wx:if="{{judge}}">wx if</view>
+<view wx:else>wx else</view>
+
+<view hidden="{{judge}}">hidden</view>
+
+<view class="article fontStyle">there are some articles</view>
+
+<view>num: {{ num }}</view>
+<button size="mini" type="primary" bindtap="handleTap">count</button>
+
+<van-checkbox value="{{ checked }}" bind:change="onChange">复选框</van-checkbox>

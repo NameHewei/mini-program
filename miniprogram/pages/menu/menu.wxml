@@ -1,5 +1,12 @@
 <!--pages/menu/menu.wxml-->
-<view>
-this is menu page
+<view class="scan">
+  <view>
+    <button type="primary" bindtap="handleScan">scan code</button>
+  </view>
+  <view>scan result: {{ scanResult }}</view>
+
+  <view>
+    <text>自定义组件</text>
+    <custom></custom>
+  </view>
 </view>
-<text>pages/menu/menu.wxml</text>

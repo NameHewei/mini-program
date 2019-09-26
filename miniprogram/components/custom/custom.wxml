@@ -1,0 +1,19 @@
+<!--components/custom/custom.wxml-->
+<!--pages/equipInfo/dtu/dtu.wxml-->
+<view>
+  <view style="display: flex;justify-content: space-between">
+    <view class="small-size">
+      <text>dtu编号：</text><text>11122222</text>
+    </view>
+    <view style="text-align:right">
+      <button size="mini" type="primary">编辑</button>
+      <button style="margin: 0 5rpx" size="mini" type="primary">更换</button>
+      <image style="display:inline-block;width: 20px;height:20px; background:red;"mode="aspectFit" src="/images/arrow-up.png"></image>
+    </view>
+  </view>
+    
+  <text>{{ scanResult }}</text>
+  <view class="dtu-scan">
+      <button type="primary" bindtap="handleScan">绑定DTU</button>
+  </view>
+</view>

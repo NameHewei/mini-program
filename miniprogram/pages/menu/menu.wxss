@@ -1,1 +1,4 @@
 /* pages/menu/menu.wxss */
+.scan{
+  margin: 10px;
+}

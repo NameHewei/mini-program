@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "custom": "../../components/custom/custom"
+  },
   "navigationBarBackgroundColor": "#999999",
   "navigationBarTextStyle": "white",
   "navigationBarTitleText": "menu"

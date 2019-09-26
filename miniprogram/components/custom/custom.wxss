@@ -1,0 +1,9 @@
+/* components/custom/custom.wxss */
+.dtu-scan{
+  position: fixed;
+  bottom: 0;
+  padding: 10rpx;
+}
+.small-size{
+  font-size: 14px
+}

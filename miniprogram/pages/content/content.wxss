@@ -1,1 +1,7 @@
 /* pages/content/content.wxss */
+@import '../../style/common.wxss';
+.article{
+  margin: 10px;
+  color: #fff;
+  background: pink;
+}

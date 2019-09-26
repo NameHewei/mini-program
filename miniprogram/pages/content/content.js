@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    title: 'this is title',
+    arr: ['a', 'b', 'c'],
+    judge: false,
+    num: 0,
+    checked: true
+  },
 
+  onChange(event) {
+    this.setData({
+      checked: event.detail
+    });
   },
 
   /**
@@ -62,5 +72,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  handleTap: function() {
+    this.setData({
+      num: this.data.num + 1
+    })
   }
 })
