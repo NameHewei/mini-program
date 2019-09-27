@@ -1,9 +1,87 @@
-/* components/custom/custom.wxss */
+.dtu-head{
+  display: flex;
+  padding-left: 10rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  justify-content: space-between;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+.num-name{
+  font-size: 28rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dtu-head-opt{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: right;
+}
+.dtu-head-opt text{
+  display: inline-block;
+  margin: 0 10rpx 4rpx;
+  padding: 0 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  vertical-align: baseline;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #39f; 
+}
+.dtu-head-opt button {
+  margin: 0 5rpx;
+}
+.arrow-image{
+  position: relative;
+  display:inline-block;
+  margin: 0 20rpx;
+  top: 6rpx;
+  width: 40rpx;
+  height: 40rpx;
+  font-family: "ui-icon" !important
+}
+.list-part{
+  background-color: #fff;
+}
+.content-list{
+  margin-left: 20rpx; 
+  border-bottom: 1px solid rgb(243, 243, 243);
+}
+.mpl-label{
+  font-size: 28rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(165, 165, 165);
+}
+.measure-point-list{
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.mpl-opt{
+  width: 320rpx;
+  text-align: right
+}
+.mpl-opt text{
+  display: inline-block;
+  margin: 0 10rpx 4rpx;
+  padding: 0 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  vertical-align: baseline;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #21ce94; 
+}
+
 .dtu-scan{
   position: fixed;
   bottom: 0;
   padding: 10rpx;
-}
-.small-size{
-  font-size: 14px
 }

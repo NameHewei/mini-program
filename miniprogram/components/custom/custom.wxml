@@ -1,19 +1,31 @@
 <!--components/custom/custom.wxml-->
 <!--pages/equipInfo/dtu/dtu.wxml-->
 <view>
-  <view style="display: flex;justify-content: space-between">
-    <view class="small-size">
-      <text>dtu编号：</text><text>11122222</text>
+  <view wx:for="{{ dtuList }}" wx:key="{{ index }}">
+    <view class="dtu-head">
+      <view class="num-name">
+        <text>标题：</text>
+        <text>{{ item.num }}</text>
+      </view>
+      <view class="dtu-head-opt">
+        <image bindtap="onTapArrow" id="{{ item.id }}" class="arrow-image" src="/images/arrow-{{ currentUnfold == item.id ? 'up' : 'down' }}.png" mode="aspectFit"></image>
+      </view>
     </view>
-    <view style="text-align:right">
-      <button size="mini" type="primary">编辑</button>
-      <button style="margin: 0 5rpx" size="mini" type="primary">更换</button>
-      <image style="display:inline-block;width: 20px;height:20px; background:red;"mode="aspectFit" src="/images/arrow-up.png"></image>
+    <view class="list-part" hidden="{{ currentUnfold != item.id }}">
+      <view class="content-list" wx:for="{{ item.cd }}" wx:for-index="inx" wx:for-item="itm" wx:key="{{ inx }}">
+        <view class="measure-point-list">
+          <view class="mpl-label">
+            <text>内容1: </text>
+            <text>{{ itm.num }}</text>
+          </view>
+        </view>
+        <view class="measure-point-list">
+          <view class="mpl-label">
+            <text>内容2: </text>
+            <text>{{ itm.name }}</text>
+          </view>
+        </view>
+      </view>
     </view>
-  </view>
-    
-  <text>{{ scanResult }}</text>
-  <view class="dtu-scan">
-      <button type="primary" bindtap="handleScan">绑定DTU</button>
   </view>
 </view>
