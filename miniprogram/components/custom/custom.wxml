@@ -1,7 +1,7 @@
 <!--components/custom/custom.wxml-->
 <!--pages/equipInfo/dtu/dtu.wxml-->
 <view>
-  <view wx:for="{{ dtuList }}" wx:key="{{ index }}">
+  <view wx:for="{{ list }}" wx:key="{{ index }}">
     <view class="dtu-head">
       <view class="num-name">
         <text>标题：</text>

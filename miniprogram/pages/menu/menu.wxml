@@ -6,7 +6,15 @@
   <view>scan result: {{ scanResult }}</view>
 
   <view>
+    <picker bindchange="bindPickerChange" mode="selector" value="pickerValue" range="{{ objectArray }}" range-key="name">
+      <view>
+        当前选择：{{ objectArray[pickerValue].name }}
+      </view>
+    </picker>
+  </view>
+
+  <view>
     <text>自定义组件</text>
-    <custom></custom>
+    <custom list="{{ dataList }}"></custom>
   </view>
 </view>
