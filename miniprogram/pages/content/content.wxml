@@ -14,3 +14,11 @@
 <button size="mini" type="primary" bindtap="handleTap">count</button>
 
 <van-checkbox value="{{ checked }}" bind:change="onChange">复选框</van-checkbox>
+
+<view>
+  <picker bindchange="bindPickerChange" mode="selector" value="pickerValue" range="{{ objectArray }}" range-key="name">
+    <view>
+      当前选择：{{ objectArray[pickerValue].name }}
+    </view>
+  </picker>
+</view>

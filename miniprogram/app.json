@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/menu/menu",
+    "pages/scan/scan",
     "pages/content/content",
-    "pages/upDownLoad/upDownLoad"
+    "pages/upDownLoad/upDownLoad",
+    "pages/echart/echart"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

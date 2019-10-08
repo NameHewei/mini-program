@@ -1,0 +1,6 @@
+<view style="padding: 20rpx;">
+  <view>
+    <button type="primary" bindtap="handleScan">scan code</button>
+  </view>
+  <view>scan result: {{ scanResult }}</view>
+</view>

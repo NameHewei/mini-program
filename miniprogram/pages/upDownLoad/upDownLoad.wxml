@@ -1,2 +1,6 @@
-<!--pages/upDownLoad/upDownLoad.wxml-->
-<text>pages/upDownLoad/upDownLoad.wxml</text>
+<view>
+  <view>
+    <text>自定义组件</text>
+    <custom list="{{ dataList }}"></custom>
+  </view>
+</view>

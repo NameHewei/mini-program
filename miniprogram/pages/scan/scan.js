@@ -1,46 +1,23 @@
-// pages/content/content.js
+// pages/scan/scan.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title: 'this is title',
-    arr: ['a', 'b', 'c'],
-    judge: false,
-    num: 0,
-    checked: true,
-    pickerValue: 0,
-    objectArray: [
-      {
-        id: 'a',
-        name: '美国'
-      },
-      {
-        id: 'c',
-        name: '中国'
-      },
-      {
-        id: 'b',
-        name: '巴西'
-      },
-      {
-        id: 'b',
-        name: '日本'
+    scanResult: '-',
+  },
+
+  /**
+ * 扫描二维码
+ */
+  handleScan: function () {
+    wx.scanCode({
+      success: (res) => {
+        this.setData({
+          scanResult: res.result
+        })
       }
-    ]
-  },
-
-  onChange(event) {
-    this.setData({
-      checked: event.detail
-    });
-  },
-
-  bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e)
-    this.setData({
-      pickerValue: e.detail.value
     })
   },
 
@@ -98,11 +75,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  handleTap: function () {
-    this.setData({
-      num: this.data.num + 1
-    })
   }
 })
