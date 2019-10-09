@@ -4,7 +4,9 @@
     "pages/scan/scan",
     "pages/content/content",
     "pages/upDownLoad/upDownLoad",
-    "pages/echart/echart"
+    "pages/echart/echart",
+    "pages/picker/picker",
+    "pages/wxs/wxs"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

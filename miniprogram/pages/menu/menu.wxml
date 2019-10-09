@@ -9,4 +9,10 @@
   <view>
     <button type="primary" bindtap="onRouter" data-url="/pages/echart/echart" >echart</button>
   </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/picker/picker" >picker</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/wxs/wxs" >wxs</button>
+  </view>
 </view>

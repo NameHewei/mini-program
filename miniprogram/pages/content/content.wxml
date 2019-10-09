@@ -15,10 +15,14 @@
 
 <van-checkbox value="{{ checked }}" bind:change="onChange">复选框</van-checkbox>
 
-<view>
-  <picker bindchange="bindPickerChange" mode="selector" value="pickerValue" range="{{ objectArray }}" range-key="name">
-    <view>
-      当前选择：{{ objectArray[pickerValue].name }}
-    </view>
-  </picker>
+<view id="screen" style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <text>屏幕宽度，两种方式:</text><text>{{ screenWidth }}</text>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <button type="primary" bindtap="showLoading">showLoading</button>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <view class="global-style">全局样式</view>
 </view>

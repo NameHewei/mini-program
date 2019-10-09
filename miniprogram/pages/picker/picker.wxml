@@ -1,0 +1,15 @@
+<view>
+  <picker bindchange="bindPickerChange" mode="selector" value="pickerValue" range="{{ objectArray }}" range-key="name">
+    <view>
+      select选择：{{ objectArray[pickerValue].name }}
+    </view>
+  </picker>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding-top:10px">
+  <picker bindchange="timePickerChange" mode="date" value="pickerDateValue" start="2015-09-01" end="2020-09-01">
+    <view>
+      日期选择：{{ pickerDateValue }}
+    </view>
+  </picker>
+</view>

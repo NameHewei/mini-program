@@ -1,0 +1,9 @@
+var a = 'hello';
+var fn = function(p) {
+  return (a + ' ' + p);
+}
+
+module.exports = {
+  a: a,
+  fn: fn
+};

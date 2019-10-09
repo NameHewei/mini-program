@@ -1,51 +1,44 @@
-// pages/content/content.js
+// pages/picker/picker.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title: 'this is title',
-    arr: ['a', 'b', 'c'],
-    judge: false,
-    num: 0,
-    checked: true,
-
-    screenWidth: 0
-  },
-
-  onChange(event) {
-    this.setData({
-      checked: event.detail
-    });
+    pickerValue: 0,
+    objectArray: [
+      {
+        id: 'a',
+        name: '美国'
+      },
+      {
+        id: 'c',
+        name: '中国'
+      },
+      {
+        id: 'b',
+        name: '巴西'
+      },
+      {
+        id: 'b',
+        name: '日本'
+      }
+    ],
+    pickerDateValue: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
- 
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    const query = wx.createSelectorQuery()
-    /**
-     * @des 当有多个类型的调用 比如 selectViewport select 同时，可以在exec中回掉中获取
-     */
-    query.select('#screen').boundingClientRect((rect) => {
-      console.log(rect)
-      this.setData({
-        screenWidth: rect.width
-      })
-    }).exec();
 
-    /**
-    * @des 直接获取屏幕宽度等信息
-    */
-    console.log(wx.getSystemInfoSync())
   },
 
   /**
@@ -90,19 +83,16 @@ Page({
 
   },
 
-  handleTap: function () {
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e)
     this.setData({
-      num: this.data.num + 1
+      pickerValue: e.detail.value
     })
   },
 
-  showLoading() {
-    wx.showLoading({
-      title: '123',
+  timePickerChange(e) {
+    this.setData({
+      pickerDateValue: e.detail.value
     })
-
-    setTimeout(function () {
-      wx.hideLoading()
-    }, 2000)
   }
 })

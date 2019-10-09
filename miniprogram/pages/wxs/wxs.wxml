@@ -1,0 +1,4 @@
+<wxs src="./test.wxs" module="ts" />
+
+<view>调用 wxs 方法结果:</view>
+<view>{{ ts.fn('world') }}</view>

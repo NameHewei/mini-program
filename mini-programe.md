@@ -13,3 +13,5 @@
 - app.json 全局配置
 
 - page.json 页面配置
+
+- 安装包 [npm 支持](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html?search-key=npm)
