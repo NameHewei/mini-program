@@ -15,7 +15,7 @@ function initChart(canvas, width, height) {
     color: ["#37A2DA", "#67E0E3", "#9FE6B8"],
     legend: {
       data: ['A', 'B', 'C'],
-      top: 20,
+      top: 25,
       left: 'center',
       backgroundColor: 'red',
       z: 100

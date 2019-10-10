@@ -11,7 +11,8 @@ Page({
     num: 0,
     checked: true,
 
-    screenWidth: 0
+    screenWidth: 0,
+    customModal: false,
   },
 
   onChange(event) {
@@ -21,16 +22,9 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
- 
-  },
-
-  /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
     const query = wx.createSelectorQuery()
     /**
      * @des 当有多个类型的调用 比如 selectViewport select 同时，可以在exec中回掉中获取
@@ -43,54 +37,12 @@ Page({
     }).exec();
 
     /**
-    * @des 直接获取屏幕宽度等信息
-    */
+     * @des 直接获取屏幕宽度等信息
+     */
     console.log(wx.getSystemInfoSync())
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
-  handleTap: function () {
+  handleTap: function() {
     this.setData({
       num: this.data.num + 1
     })
@@ -101,8 +53,36 @@ Page({
       title: '123',
     })
 
-    setTimeout(function () {
+    setTimeout(function() {
       wx.hideLoading()
     }, 2000)
+  },
+
+  showModal() {
+    wx.showModal({
+      title: 'modal',
+
+    })
+  },
+
+  showCustomModal() {
+    this.setData({
+      customModal: true
+    })
+  },
+
+
+  /**
+   * 自定义弹出层，防止页面滑动
+   */
+  catchMove() {},
+
+  /**
+   * @des 关闭弹出层
+   */
+  catchClose() {
+    this.setData({
+      customModal: false
+    })
   }
 })

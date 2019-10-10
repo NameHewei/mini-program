@@ -24,5 +24,18 @@
 </view>
 
 <view style="border-top:1px solid #999;margin-top:10px;padding:10px">
-  <view class="global-style">全局样式</view>
+  <button type="primary" bindtap="showModal">modal</button>
+  <button type="primary" style="margin-top: 10rpx" bindtap="showCustomModal">自定义弹出层</button>
+</view>
+
+<view class="custom-modal" hidden="{{ !customModal }}" catchtouchmove="catchMove" catchtap="catchClose">
+  <text>这是一些内容</text>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <view class="global-style">全局样式,注意组件中不会继承全局样式  需要特别的处理</view>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <button type="primary" bindtap="showModal"></button>
 </view>
