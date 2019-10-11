@@ -68,17 +68,23 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.setData({
-      currentPage: this.data.currentPage + 1,
-      dataList: [...this.data.dataList, {
-        id: 'id' + 10,
+    const arr = []
+    for(let i = 0; i<10;i++) {
+      const id = Math.random() 
+      arr.push({
+        id: id + 10,
         num: Math.random(),
         cd: [{
           id: 13,
           num: '01213233',
           name: '0namemem'
         }]
-      }]
+      })
+    }
+
+    this.setData({
+      currentPage: this.data.currentPage + 1,
+      dataList: [...this.data.dataList, ...arr]
     })
     console.log(this.data.currentPage)
   },
