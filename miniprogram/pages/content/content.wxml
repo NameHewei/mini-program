@@ -33,7 +33,9 @@
 </view>
 
 <view style="border-top:1px solid #999;margin-top:10px;padding:10px">
-  <view class="global-style">全局样式,注意组件中不会继承全局样式  需要特别的处理</view>
+  <view class="global-style">
+  全局样式,注意组件中不会继承全局样式 参考.cunstom-h1 在computed组件中的用法与styleIsolation配置
+  </view>
 </view>
 
 <view style="border-top:1px solid #999;margin-top:10px;padding:10px">

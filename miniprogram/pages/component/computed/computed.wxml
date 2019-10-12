@@ -1,0 +1,30 @@
+<view>
+  <view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+    <view class="custom-h1">
+      computed: 不能用this
+    </view>
+    <view>
+      score: {{ student }}
+    </view>
+    <view>
+      <button type="primary" bindtap="addScoree">score + 2</button>
+    </view>
+  </view>
+
+  <view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+    <view class="custom-h1">watch: 原理上性能比 computed 更好；但 computed 的用法更简洁干净</view>
+    <view>score1: {{ score1 }}</view>
+    <view>score2: {{ score2 }}</view>
+    <view>score3: {{ score3 }}</view>
+    <view>total: {{ total }}</view>
+    <view>
+      <button type="primary" size="mini" bindtap="changeScore1">修改score1</button>
+    </view>
+    <view>
+      <button type="primary" size="mini" bindtap="changeScore2">修改score2</button>
+    </view>
+    <view>
+      <button type="primary" size="mini" bindtap="changeScore3">修改score3</button>
+    </view>
+  </view>
+</view>

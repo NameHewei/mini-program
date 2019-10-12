@@ -161,3 +161,10 @@ page {
   color: #fff;
   background-color: rgb(12, 180, 209);
 }
+
+.custom-h1{
+  margin: 5px 0; 
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 18px;
+}

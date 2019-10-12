@@ -7,7 +7,8 @@
     "pages/echart/echart",
     "pages/picker/picker",
     "pages/wxs/wxs",
-    "pages/media/media"
+    "pages/media/media",
+    "pages/component/component"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

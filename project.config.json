@@ -11,7 +11,7 @@
 		"coverView": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
-		"checkSiteMap": true,
+		"checkSiteMap": false,
 		"uploadWithSourceMap": true,
 		"babelSetting": {
 			"ignore": [],
@@ -51,9 +51,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "pages/picker/picker",
-					"pathName": "pages/picker/picker",
+					"id": 1,
+					"name": "pages/component/component",
+					"pathName": "pages/component/component",
 					"query": "",
 					"scene": null
 				}
