@@ -1,7 +1,7 @@
 <view style="padding: 10px">
   <view>
     <view>
-      <text>computed和watch的使用</text>
+      <text>组件中使用computed和watch的使用</text>
     </view>
     <custom-computed></custom-computed>
   </view>

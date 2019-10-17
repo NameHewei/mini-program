@@ -157,7 +157,6 @@ page {
 
 .global-style {
   padding: 3px;
-  height: 50px;
   color: #fff;
   background-color: rgb(12, 180, 209);
 }

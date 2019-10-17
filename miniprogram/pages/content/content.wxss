@@ -3,7 +3,8 @@
 .article{
   margin: 10px;
   color: #fff;
-  background: pink;
+  padding: 10px;
+  background: rgb(25, 195, 247);
 }
 
 .custom-modal{

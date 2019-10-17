@@ -5,12 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    parentId: '',
+    childId: '',
     title: 'this is title',
     arr: ['a', 'b', 'c'],
     judge: false,
     num: 0,
     checked: true,
-
     screenWidth: 0,
     customModal: false,
   },
@@ -19,6 +20,17 @@ Page({
     this.setData({
       checked: event.detail
     });
+  },
+
+  /**
+   * @des 获取data-x绑定的数据 
+   */
+  onGetData(res) {
+    console.log(res)
+    this.setData({
+      parentId: res.currentTarget.dataset.parentId,
+      childId: res.target.dataset.id
+    })
   },
 
   /**
@@ -61,6 +73,30 @@ Page({
   showModal() {
     wx.showModal({
       title: 'modal',
+      content: '这是一个模态弹窗',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+
+  showActionSheet() {
+    wx.showActionSheet({
+      itemList: ['A', 'B', 'C'],
+      success(res) {
+        console.log('showActionSheet', res.tapIndex)
+      },
+    })
+  },
+
+  showToast() {
+    /** 不掉用隐藏，会默认隐藏 */
+    wx.showToast({
+      title: 'toast',
 
     })
   },
