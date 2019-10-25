@@ -25,6 +25,7 @@ App({
       method: method = 'get',
       params,
       success,
+      fail,
     } = data;
     let {
       url
@@ -45,6 +46,13 @@ App({
       success: function(res) {
         success(res)
       },
+      fail: function () {
+        if (fail) {
+          fail();
+        } else {
+          wx.hideLoading();
+        }
+      }
     })
   }
 })
