@@ -1,4 +1,3 @@
-<!--pages/menu/menu.wxml-->
 <view class="menu-container">
   <view>
     <button type="primary" bindtap="onRouter" data-url="/pages/scan/scan" >扫描</button>
@@ -8,6 +7,9 @@
   </view>
   <view>
     <button type="primary" bindtap="onRouter" data-url="/pages/echart/echart" >echart</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/uChart/uChart" >uchart</button>
   </view>
   <view>
     <button type="primary" bindtap="onRouter" data-url="/pages/picker/picker" >picker</button>
@@ -20,5 +22,11 @@
   </view>
   <view>
     <button type="primary" bindtap="onRouter" data-url="/pages/component/component" >组件</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/packageA/pages/pA/pA" >分包</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/webView/webView" >web-view</button>
   </view>
 </view>

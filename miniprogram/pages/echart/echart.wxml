@@ -1,5 +1,10 @@
 <view style="height: 800rpx; width: 100%;">  
   <ec-canvas ec="{{ ec }}"></ec-canvas>
 </view>
-
+<view>
+  <button type="primary" bindtap="enlarge">放大</button>
+</view>
 <view>宽高要提前设置</view>
+<view style="margin: 20px 0;">
+  <custom-ech></custom-ech>
+</view>

@@ -1,11 +1,11 @@
-import * as echarts from '../../components/ec-canvas/echarts';
+import * as echarts from '../../../components/ec-canvas/echarts';
 
 const charts = [];
 
 function initChart(canvas, width, height) {
   const chart = echarts.init(canvas, null, {
-    width: width,
-    height: height
+    width: 350,
+    height: 400
   });
   charts.push(chart);
   canvas.setChart(chart);
@@ -31,14 +31,14 @@ function initChart(canvas, width, height) {
       trigger: 'axis'
     },
     dataZoom: [
-      { 
+      {
         type: 'inside',
         start: 0,
         end: 100,
         xAxisIndex: 0
-       }, {
-         type: 'inside'
-       }
+      }, {
+        type: 'inside'
+      }
     ],
     xAxis: {
       type: 'category',
@@ -54,9 +54,9 @@ function initChart(canvas, width, height) {
           type: 'dashed'
         }
       }
-    },{
-        name: 'y2',
-        type: 'value',
+    }, {
+      name: 'y2',
+      type: 'value',
     }],
     series: [{
       name: 'A',
@@ -81,23 +81,28 @@ function initChart(canvas, width, height) {
   return chart;
 }
 
-// pages/echart/echart.js
-Page({
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+
+  },
 
   /**
-   * 页面的初始数据
+   * 组件的初始数据
    */
   data: {
     ec: {
+      disableTouch: true,
       onInit: initChart
     }
   },
 
-  enlarge() {
-    charts[0].dispatchAction({
-      type: 'dataZoom',
-      start: 20,
-      end: 30
-    });
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+
   }
 })

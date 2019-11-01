@@ -10,7 +10,13 @@
 }
 ```
 
+---
+
 - app.json 全局配置
+
+pages 数组的第一个值为小程序的首页
+
+---
 
 - page.json 页面配置
 
@@ -38,3 +44,8 @@ sitemap.json
   }]
 }
 ```
+
+
+## 遇到的问题
+
+- 自定义弹窗防止底层内容滑动添加事件 catchtouchmove="catchMove" catchMove 是空函数即可
