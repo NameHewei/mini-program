@@ -1,26 +1,11 @@
 import uCharts from '../../../public/js/u-charts.min.js';
-// var canvasLine = null;
 
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    // data: {
-    //   canvasId: 'canvasColumn',
-    //   series: [{
-    //     name: '成交量A',
-    //     data: [35, 20, 25, 37, 4, 20],
-    //     color: '#000000'
-    //   }, {
-    //     name: '成交量B',
-    //     data: [70, 40, 65, 19, 44, 68]
-    //   }, {
-    //     index: 1,
-    //     name: '成交量C',
-    //     data: [100, 80, 95, 150, 112, 132]
-    //   }]
-    // }
+
   },
 
   /**
@@ -28,6 +13,7 @@ Component({
    */
   data: {
     canvasLine: null,
+    canvasId: 'canvasId' + Math.ceil(Math.random() * 100),
     cWidth: '',
     cHeight: '',
     sliderMax: 20,
@@ -37,10 +23,13 @@ Component({
 
   lifetimes: {
     attached: function() {
-      this.cWidth = wx.getSystemInfoSync().windowWidth;
-      this.cHeight = 500 / 750 * wx.getSystemInfoSync().windowWidth;
-
-      this.showLine();
+      const width = wx.getSystemInfoSync().windowWidth;
+      this.setData({
+        cWidth: width,
+        cHeight: 500 / 750 * width,
+      }, () => {
+        this.showLine();
+      })
     }
   },
 
@@ -48,16 +37,23 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    showRing() {
+
+    },
     /**
      * @des 生成图表
      */
     showLine() {
-      this.canvasLine = new uCharts({
+      const {
+        canvasId, cWidth, cHeight
+      } = this.data;
+      
+      const tempObj = new uCharts({
         $this: this,
-        canvasId: 'canvasLine',
+        canvasId: canvasId,
         type: 'line',
         title: {
-          name: '222222'
+          name: 'y轴标题'
         },
         legend: true,
         fontSize: 11,
@@ -88,11 +84,12 @@ Component({
           scrollColor: '#DEE7F7', //默认为 #A6A6A6
           disableGrid: false,
           format: (v) => {
-            console.log(v);
             return v + '11'
           }
         },
         yAxis: {
+          /* 是否要显示y轴标题 */
+          showTitle: true,
           data: [{
             title: 'y1',
             position: 'left',
@@ -100,12 +97,13 @@ Component({
               return v + '1=1'
             }
           }, {
+            title: 'y2',
             position: 'right',
-          }]
+          }],
         },
         dataLabel: true,
-        width: this.cWidth,
-        height: this.cHeight,
+        width: cWidth,
+        height: cHeight,
         padding: [30, 15, 4, 15],
         extra: {
           line: {
@@ -114,29 +112,33 @@ Component({
           }
         }
       });
+
+      this.setData({
+        canvasLine: tempObj 
+      })
     },
 
     /**
      * @des 图表事件
      */
     touchStart(e) {
-      this.canvasLine.scrollStart(e);
-      this.canvasLine.touchLegend(e);
-      this.canvasLine.showToolTip(e);
+      this.data.canvasLine.scrollStart(e);
+      this.data.canvasLine.touchLegend(e);
+      this.data.canvasLine.showToolTip(e);
     },
 
     /**
      * @des 图表事件
      */
     touchMove(e) {
-      this.canvasLine.scroll(e);
+      this.data.canvasLine.scroll(e);
     },
 
     /**
      * @des 图表事件
      */
     touchEnd(e) {
-      this.canvasLine.scrollEnd(e);
+      this.data.canvasLine.scrollEnd(e);
     },
 
     /**
@@ -151,8 +153,7 @@ Component({
       this.setData({
         itemCount: num
       })
-      console.log('reduce', num)
-      this.canvasLine.zoom({
+      this.data.canvasLine.zoom({
         itemCount: num
       });
     },
@@ -168,8 +169,7 @@ Component({
       this.setData({
         itemCount: num
       })
-      console.log('enlarge', num)
-      this.canvasLine.zoom({
+      this.data.canvasLine.zoom({
         itemCount: num
       });
     },

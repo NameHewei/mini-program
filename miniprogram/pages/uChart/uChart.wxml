@@ -1,4 +1,5 @@
 <view>
   <custom-uch-line></custom-uch-line>
   <custom-uch-line></custom-uch-line>
+  <custom-uch-ring></custom-uch-ring>
 </view>

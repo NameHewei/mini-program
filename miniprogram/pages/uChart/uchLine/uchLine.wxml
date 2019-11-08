@@ -4,6 +4,6 @@
       <text type="primary" class="enlarge-reduce" bindtap="enlarge">+</text>
       <text type="primary" class="enlarge-reduce" bindtap="reduce">-</text>
     </view>
-    <canvas canvas-id="canvasLine" id="canvasLine" class="charts" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd"></canvas>
+    <canvas canvas-id="{{ canvasId }}" id="{{ canvasId }}" class="charts" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd"></canvas>
   </view>
 </view>
