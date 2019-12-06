@@ -1,3 +1,4 @@
+<import src="./template.wxml"/>
 <view style="padding: 10px">
   <view>
     <view>
@@ -5,4 +6,8 @@
     </view>
     <custom-computed></custom-computed>
   </view>
+  <!-- 这里的is的值，为template的name值 -->
+  <template is="templateName" data="{{text: '这是template内容'}}"></template>
+
+  <include src="./include.wxml" data="{{text: '这是template内容'}}"/>
 </view>

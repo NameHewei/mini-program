@@ -5,7 +5,16 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    /** 图表数据 */
+    chartData: {
+      type: Object,
+      value: {
+        title: '',
+        xAxisData: [],
+        series: [],
+        yAxisData: []
+      }
+    }
   },
 
   /**
@@ -45,9 +54,11 @@ Component({
      */
     showLine() {
       const {
-        canvasId, cWidth, cHeight
+        canvasId,
+        cWidth,
+        cHeight
       } = this.data;
-      
+
       const tempObj = new uCharts({
         $this: this,
         canvasId: canvasId,
@@ -72,14 +83,16 @@ Component({
           name: '成交量C',
           data: [100, 80, 95, 150, 112, 132]
         }],
-        enableScroll: true, //开启图表拖拽功能
+        // 开启图表拖拽功能
+        enableScroll: true, 
         xAxis: {
           type: 'grid',
           gridColor: '#CCCCCC',
           gridType: 'dash',
           itemCount: 4, //x轴单屏显示数据的数量，默认为5个
           scrollShow: true, //新增是否显示滚动条，默认false
-          scrollAlign: 'left', //滚动条初始位置
+          // 滚动条初始位置
+          scrollAlign: 'right', 
           scrollBackgroundColor: '#F7F7FF', //默认为 #EFEBEF
           scrollColor: '#DEE7F7', //默认为 #A6A6A6
           disableGrid: false,
@@ -114,7 +127,7 @@ Component({
       });
 
       this.setData({
-        canvasLine: tempObj 
+        canvasLine: tempObj
       })
     },
 

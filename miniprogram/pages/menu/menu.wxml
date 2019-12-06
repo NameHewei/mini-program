@@ -21,7 +21,7 @@
     <button type="primary" bindtap="onRouter" data-url="/pages/media/media" >图片视频</button>
   </view>
   <view>
-    <button type="primary" bindtap="onRouter" data-url="/pages/component/component" >组件</button>
+    <button type="primary" bindtap="onRouter" data-url="/pages/component/component" >组件、模板、include</button>
   </view>
   <view>
     <button type="primary" bindtap="onRouter" data-url="/packageA/pages/pA/pA" >分包</button>
