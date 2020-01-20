@@ -10,7 +10,8 @@
     "pages/wxs/wxs",
     "pages/media/media",
     "pages/component/component",
-    "pages/webView/webView"
+    "pages/webView/webView",
+    "pages/drawBoard/drawBoard"
   ],
   "subpackages": [
     {

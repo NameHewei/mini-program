@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 个人类型的小程序暂不支持使用
     web_src: "https://www.baidu.com", //webview内嵌的url
   },
 

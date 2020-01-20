@@ -1,7 +1,7 @@
 <view style="border-top:1px solid #999;margin-top:10px;padding:10px">
   <view>{{ title }}</view>
   <view class="custom-h1">wx:key="*this" 被循环的值，需要 item 本身是一个唯一的字符串或者数字</view>
-  <view wx:for="{{arr}}" wx:key="{{index}}">{{index}},{{item}}</view>
+  <view wx:for="{{arr}}" wx:key="index" data-a="{{ index }}">{{index}},{{item}}</view>
 </view>
 
 <view style="border-top:1px solid #999;margin-top:10px;padding:10px">
@@ -51,6 +51,10 @@
 
 <view class="custom-modal" hidden="{{ !customModal }}" catchtouchmove="catchMove" catchtap="catchClose">
   <text>这是一些内容</text>
+</view>
+
+<view>
+  <button type="primary" bindtap="downloadOpen">下载文件并打开</button>
 </view>
 
 <view style="border-top:1px solid #999;margin-top:10px;padding:10px">

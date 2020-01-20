@@ -29,4 +29,7 @@
   <view>
     <button type="primary" bindtap="onRouter" data-url="/pages/webView/webView" >web-view</button>
   </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/drawBoard/drawBoard" >canvas 画板</button>
+  </view>
 </view>

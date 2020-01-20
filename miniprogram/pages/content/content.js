@@ -51,7 +51,7 @@ Page({
     /**
      * @des 直接获取屏幕宽度等信息
      */
-    console.log(wx.getSystemInfoSync())
+    console.log('getSystemInfoSync:', wx.getSystemInfoSync())
   },
 
   handleTap: function() {
@@ -119,6 +119,38 @@ Page({
   catchClose() {
     this.setData({
       customModal: false
+    })
+  },
+
+  downloadOpen() {
+    wx.showLoading({
+      title: 'loading',
+    })
+    wx.downloadFile({
+      // 示例 url，并非真实存在
+      url: 'urlxxxxxx',
+      success: function(res) {
+        wx.hideLoading()
+        const filePath = res.tempFilePath   
+        wx.openDocument({
+          filePath: filePath,
+          success: function(res) {
+            console.log('success')
+          },
+          fail: function() {
+            wx.showToast({
+              icon: 'none',
+              title: 'error'
+            })
+          }
+        })
+      },
+      fail: function () {
+        wx.showToast({
+          icon: 'none',
+          title: 'error'
+        })
+      }
     })
   }
 })
