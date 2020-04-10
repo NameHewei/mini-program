@@ -1,67 +1,87 @@
+let canvas = null;
 let ctx = null;
 /** 是否点击开始 */
 let start = false;
 /** 记录起始位置 */
 let startX = 0;
 let startY = 0;
-let windowWidth = 0;
-let canvasHeight = 200;
+let canvasWidth = 0;
+let canvasHeight = 0;
+
+function handleDraw(x, y) {
+  ctx.beginPath();
+  ctx.moveTo(startX, startY);
+  /** 将结束位置设置为下一次起始位置 */
+  startX = x;
+  startY = y;
+  ctx.lineTo(x, y);
+  ctx.stroke();
+}
 
 Page({
   data: {
-    start: 'no',
-    end: 'yes',
+    operate: '',
     imgUrl: ''
   },
 
   onReady: function () {
-    ctx = wx.createCanvasContext('drawBoard');
+    const query = wx.createSelectorQuery()
+    query.select('#drawBoard')
+      .fields({ node: true, size: true })
+      .exec((res) => {
+        canvas = res[0].node
+        ctx = canvas.getContext('2d')
 
-    wx.getSystemInfo({
-      success: (res) => {
-        windowWidth= res.windowWidth
-      }
-    })
+        const dpr = wx.getSystemInfoSync().pixelRatio
+        canvas.width = res[0].width * dpr
+        canvas.height = res[0].height * dpr
+        ctx.scale(dpr, dpr)
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#5e5e5e';
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        // 使用阴影 消除锯齿
+        ctx.shadowBlur = 2;
+        ctx.shadowColor = '#5e5e5e';
+        canvasWidth = canvas.width;
+        canvasHeight = canvas.height;
+      })
   },
 
   handleTouchStart(e) {
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = 'green';
+    console.log(e)
     startX = e.touches[0].x;
     startY = e.touches[0].y;
+    this.setData({
+      operate: 'start' + Math.random()
+    })
   },
 
   handleTouchMove(e) {
-    this.handleDraw(e.touches[0].x, e.touches[0].y)
+    handleDraw(e.changedTouches[0].x, e.changedTouches[0].y)
+    this.setData({
+      operate: 'move' + e.touches[0].x
+    })
   },
 
-  handleDraw(x, y){
-      ctx.beginPath();
-      ctx.moveTo(startX, startY);
-      /** 将结束位置设置为下一次起始位置 */
-      startX= x;
-      startY= y;
-      ctx.lineTo(x, y);
-      ctx.stroke();
-      ctx.draw(true);
-  },
-
-  handleTouchEnd() {
-
+  handleTouchEnd(e) {
+    console.log(e)
+    this.setData({
+      operate: 'end' + e.changedTouches[0].x
+    })
   },
 
   handleClear() {
-    ctx.clearRect(0, 0, windowWidth, canvasHeight);
-    ctx.draw();
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
   },
 
   handleExportPhoto() {
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,
-      width: windowWidth,
+      width: canvasWidth,
       height: canvasHeight,
-      canvasId: 'drawBoard',
+      canvas: canvas,
       success: (res) => {
         this.setData({
           imgUrl: res.tempFilePath

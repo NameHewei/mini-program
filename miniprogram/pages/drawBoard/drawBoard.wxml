@@ -1,8 +1,12 @@
 <view>
-  <canvas canvas-id="drawBoard" class="draw-board" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove" bindtouchend="handleTouchEnd"  ></canvas>
+  <canvas type="2d" id="drawBoard" class="draw-board" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove" bindtouchend="handleTouchEnd"  ></canvas>
 
   <button type="primary" style="margin-top: 10px" bindtap="handleClear">清除</button>
   <button type="primary" style="margin-top: 10px" bindtap="handleExportPhoto">保存本地和上传</button>
+
+  <view>
+    操作：{{ operate }}
+  </view>
 
   <view>
     <view style="margin: 10px">预览</view>
