@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-icon": "weui-miniprogram/icon/icon"
+  }
 }

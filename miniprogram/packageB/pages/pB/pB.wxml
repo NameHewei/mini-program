@@ -1,3 +1,5 @@
 <view>
   pB
+  <my-icon type="field" icon="search" color="black" size="{{25}}"></my-icon> 
+
 </view>

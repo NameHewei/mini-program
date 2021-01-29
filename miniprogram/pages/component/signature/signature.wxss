@@ -1,0 +1,12 @@
+.clear{
+  color: #17AFFF;
+}
+.sure{
+  background: #17AFFF;
+}
+.draw-board{
+  width: 100%;
+  height: 200px;
+  margin: 0 0 10px;
+  background-color: rgb(240, 240, 240);
+}

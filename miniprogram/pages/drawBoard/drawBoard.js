@@ -21,7 +21,8 @@ function handleDraw(x, y) {
 Page({
   data: {
     operate: '',
-    imgUrl: ''
+    imgUrl: '',
+    signUrl: ''
   },
 
   onReady: function () {
@@ -46,6 +47,17 @@ Page({
         canvasWidth = canvas.width;
         canvasHeight = canvas.height;
       })
+  },
+
+  handleSignayure() {
+    const signature = this.selectComponent('.signature')
+    signature.triggerShow()
+  },
+
+  handleCallback(e) {
+    this.setData({
+      signUrl: e.detail.objectUrl
+    })
   },
 
   handleTouchStart(e) {

@@ -3,5 +3,6 @@
   <view style="margin: 20px 0">
     查看app.json配置
   </view>
+  <mp-icon type="field" icon="add" color="black" size="{{25}}"></mp-icon>
   <navigator url="/packageB/pages/pB/pB">点击跳转到 pB</navigator>
 </view>

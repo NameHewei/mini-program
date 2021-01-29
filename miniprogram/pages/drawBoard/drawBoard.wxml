@@ -13,3 +13,9 @@
     <image src="{{ imgUrl }}"></image>
   </view>
 </view>
+
+<view>
+  <h2 bindtap="handleSignayure">签字</h2>
+  <signature class="signature" bind:callback="handleCallback"></signature>
+  <image src="{{ signUrl }}"></image>
+</view>
