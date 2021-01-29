@@ -73,15 +73,13 @@ Component({
           success: (res) => {
             /** 上传图片 */
             wx.uploadFile({
-              url: 'http://192.168.0.3:9999/oss/storage/upload', //仅为示例，非真实的接口地址
+              url: 'xxx', //仅为示例，非真实的接口地址
               filePath: res.tempFilePath,
               name: 'file',
               header: {
-                Authorization: 'bearer 3b9113c9-474b-4ab3-9c8d-143c384be3ff'
+                Authorization: ''
               },
               formData: {
-                'directory': 'TARGET_MANAGEMENT',
-                'bucket': 'ivy-security-bucket'
               },
               success: (res) => {
                 try {
