@@ -6,6 +6,12 @@
     <navigator url="/pages/upDownLoad/upDownLoad">上拉下拉</navigator>
   </view>
   <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/treePage/treePage" >tree</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/form/form" >form</button>
+  </view>
+  <view>
     <button type="primary" bindtap="onRouter" data-url="/pages/echart/echart" >echart</button>
   </view>
   <view>
@@ -18,7 +24,7 @@
     <button type="primary" bindtap="onRouter" data-url="/pages/wxs/wxs" >wxs</button>
   </view>
   <view>
-    <button type="primary" bindtap="onRouter" data-url="/pages/media/media" >图片视频</button>
+    <button type="primary" bindtap="onRouter" data-url="/pages/media/media" >图片视频文件等相关处理</button>
   </view>
   <view>
     <button type="primary" bindtap="onRouter" data-url="/pages/component/component" >组件、模板、include</button>

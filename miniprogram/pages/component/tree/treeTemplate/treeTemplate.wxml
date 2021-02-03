@@ -1,0 +1,6 @@
+<view wx:for="{{treeData}}" wx:key="index">
+  <h2 class="^f_tit" bindtap="handleTap" data-id="{{ item.id }}">{{ item.label }}</h2>
+  <view class="^p_l">
+    <cus-tree-template bind:callback="handleCallback" wx:if="item.children.length" treeData="{{ item.children }}"></cus-tree-template>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+.tree_wrap{
+  height: 260px;
+  padding: 10px 0;
+  overflow: auto;
+}
+.f_tit{
+  font-size: 14px;
+}
+.p_l{
+  padding-left: 10px;
+  font-size: 12px;
+}

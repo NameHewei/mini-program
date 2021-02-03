@@ -1,3 +1,12 @@
+<view style="border-top:1px solid #999;margin:20px;padding:10px">
+  <button type="primary" bindtap="getFile">获取文件</button>
+</view>
+
+<view style="border-top:1px solid #999;margin:20px;padding:10px">
+  <button type="primary" bindtap="getLocalImg">获取本地图片</button>
+  <image src="{{localImgpath}}"></image>
+</view>
+
 <view style="border-top:1px solid #999;margin-top:10px;padding:10px">
   <button type="primary" bindtap="photoPreview">预览大图</button>
 </view>

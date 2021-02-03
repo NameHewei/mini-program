@@ -41,12 +41,6 @@
   "simulatorPluginLibVersion": {},
   "compileType": "miniprogram",
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
     "plugin": {
       "list": []
     },
@@ -59,10 +53,10 @@
     "miniprogram": {
       "list": [
         {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
+          "name": "pages/form/form",
+          "pathName": "pages/form/form",
+          "query": "",
+          "scene": null
         },
         {
           "id": 1,

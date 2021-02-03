@@ -11,7 +11,9 @@
     "pages/media/media",
     "pages/component/component",
     "pages/webView/webView",
-    "pages/drawBoard/drawBoard"
+    "pages/drawBoard/drawBoard",
+    "pages/treePage/treePage",
+    "pages/form/form"
   ],
   "subpackages": [
     {
