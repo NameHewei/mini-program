@@ -1,0 +1,18 @@
+{
+  "name": "mini-program",
+  "version": "1.0.0",
+  "description": "小程序demo练习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "hewitt",
+  "license": "ISC",
+  "dependencies": {
+    "miniprogram-computed": "^2.1.0",
+    "vant-weapp": "^1.0.0-beta.0"
+  }
+}

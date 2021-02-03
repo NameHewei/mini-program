@@ -1,0 +1,14 @@
+<view catchtouchmove="catchMove">
+  <mp-half-screen-dialog
+    bindbuttontap="buttontap"
+    show="{{show}}"
+    maskClosable="{{false}}" 
+    title="一级标题"
+    subTitle="测试标题B的副标题"
+    buttons="{{buttons}}"
+  >
+    <view slot="desc">
+      <canvas type="2d" id="idSignature" class="draw-board" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove" bindtouchend="handleTouchEnd"></canvas>
+	  </view>
+  </mp-half-screen-dialog>
+</view>

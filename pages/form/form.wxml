@@ -1,0 +1,19 @@
+<view>
+  <radio-group bindchange="radioChange">
+    <view wx:for="{{radioList}}" wx:key="index">
+      <radio value="{{item.value}}" checked="{{ item.checked }}"/>
+      <text>{{item.label}}</text>
+    </view>
+  </radio-group>
+</view>
+
+<view style="margin: 20px"></view>
+
+<view>
+  <checkbox-group bindchange="checkboxChange">
+    <view wx:for="{{checkList}}" wx:key="index">
+        <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+        <text>{{item.label}}</text>
+    </view>
+  </checkbox-group>
+</view>

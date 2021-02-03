@@ -1,0 +1,23 @@
+<view style="border-top:1px solid #999;margin:20px;padding:10px">
+  <button type="primary" bindtap="getFile">获取文件</button>
+</view>
+
+<view style="border-top:1px solid #999;margin:20px;padding:10px">
+  <button type="primary" bindtap="getLocalImg">获取本地图片</button>
+  <image src="{{localImgpath}}"></image>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <button type="primary" bindtap="photoPreview">预览大图</button>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px;text-align:center">
+  <video src="{{ localVideo }}" controls></video>
+  <button type="primary" bindtap="handleGetLocalVedio">获取本地视频</button>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px;text-align:center">
+  <view>远程视频</view>
+  <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+    danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+</view>

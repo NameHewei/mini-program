@@ -1,0 +1,3 @@
+<view class="tree_wrap">
+  <cus-tree-template treeData="{{ treeData }}" bind:callback="handleCallback"></cus-tree-template>
+</view>

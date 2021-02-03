@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "cus-tree": "/pages/component/tree/tree"
+  }
+}

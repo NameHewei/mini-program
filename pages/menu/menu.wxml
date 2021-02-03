@@ -1,0 +1,41 @@
+<view class="menu-container">
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/scan/scan" >扫描</button>
+  </view>
+  <view class="navigator-box">
+    <navigator url="/pages/upDownLoad/upDownLoad">上拉下拉</navigator>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/treePage/treePage" >tree</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/form/form" >form</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/echart/echart" >echart</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/uChart/uChart" >uchart</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/picker/picker" >picker</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/wxs/wxs" >wxs</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/media/media" >图片视频文件等相关处理</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/component/component" >组件、模板、include</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/packageA/pages/pA/pA" >分包</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/webView/webView" >web-view</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/drawBoard/drawBoard" >canvas 画板</button>
+  </view>
+</view>

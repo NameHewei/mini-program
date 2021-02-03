@@ -1,7 +1,0 @@
-<view>
-  <view>pA</view>
-  <view style="margin: 20px 0">
-    查看app.json配置
-  </view>
-  <navigator url="/packageB/pages/pB/pB">点击跳转到 pB</navigator>
-</view>
