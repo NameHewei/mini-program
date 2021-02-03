@@ -1,16 +1,76 @@
-<!--pages/content/content.wxml-->
-<text>pages/content/content.wxml</text>
-<view>{{ title }}</view>
-<view wx:for="{{arr}}" wx:key="{{index}}">{{index}},{{item}}</view>
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <view>{{ title }}</view>
+  <view class="custom-h1">wx:key="*this" 被循环的值，需要 item 本身是一个唯一的字符串或者数字</view>
+  <view wx:for="{{arr}}" wx:key="index" data-a="{{ index }}">{{index}},{{item}}</view>
+</view>
 
-<view wx:if="{{judge}}">wx if</view>
-<view wx:else>wx else</view>
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <view data-parent-id="1001" bindtap="onGetData">
+    <view data-id="10001">点击获取data-id绑定的值</view>
+    <view data-id="10002">点击获取data-id绑定的值</view>
+  </view>
+  <view>父与子id:{{ parentId }} -- {{ childId }}</view>
+</view>
 
-<view hidden="{{judge}}">hidden</view>
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <view wx:if="{{judge}}">wx if</view>
+  <view wx:else>wx else</view>
 
-<view class="article fontStyle">there are some articles</view>
+  <view hidden="{{judge}}">hidden</view>
+</view>
 
-<view>num: {{ num }}</view>
-<button size="mini" type="primary" bindtap="handleTap">count</button>
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <view class="article fontStyle">引入其它文件样式</view>
+</view>
 
-<van-checkbox value="{{ checked }}" bind:change="onChange">复选框</van-checkbox>
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <view>num: {{ num }}</view>
+  <button size="mini" type="primary" bindtap="handleTap">count</button>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <van-checkbox value="{{ checked }}" bind:change="onChange">复选框</van-checkbox>
+</view>
+
+<view id="screen" style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <text>屏幕宽度，两种方式:</text><text>{{ screenWidth }}</text>
+  <view>wx.getSystemInfoSync()</view>
+  <view>query.select('#screen').boundingClientRect</view>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <button type="primary" size="mini" bindtap="showLoading">wx.showLoading</button>
+  <button type="primary" style="margin: 0 10rpx" size="mini" bindtap="showToast">wx.showToast</button>
+  <button type="primary" size="mini" bindtap="showModal">wx.showModal</button>
+  <button type="primary" style="margin: 0 10rpx" size="mini" bindtap="showActionSheet">wx.showActionSheet</button>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <button type="primary" bindtap="showCustomModal">自定义弹出层</button>
+</view>
+
+<view class="custom-modal" hidden="{{ !customModal }}" catchtouchmove="catchMove" catchtap="catchClose">
+  <text>这是一些内容</text>
+</view>
+
+<view>
+  <button type="primary" bindtap="downloadOpen">下载文件并打开</button>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <view class="global-style">
+    全局样式,注意组件中不会继承全局样式 参考.cunstom-h1 在computed组件中的用法与styleIsolation配置
+  </view>
+</view>
+
+<view style="border-top:1px solid #999;margin-top:10px;padding:10px">
+  <view>swiper</view>
+  <swiper style="height: 150px;background: #fff" indicator-dots="{{ true }}" autoplay="{{ true }}">
+    <block wx:for="{{['#056dc6', '#c70d35', 'orange']}}" wx:key="*this">
+      <swiper-item style="height: 100px">
+        <view style="height: 100px;background:{{ item }}"></view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+

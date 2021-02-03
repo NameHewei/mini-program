@@ -1,0 +1,5 @@
+<!-- module的值为，调用时的名称 -->
+<wxs src="./test.wxs" module="ts" />
+
+<view>调用 wxs 方法结果:</view>
+<view>{{ ts.fn('world') }}</view>

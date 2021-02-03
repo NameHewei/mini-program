@@ -1,7 +1,7 @@
 //app.js
 App({
-  onLaunch: function () {
-    
+  onLaunch: function() {
+
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -16,5 +16,43 @@ App({
     }
 
     this.globalData = {}
+  },
+
+  // 封装 wx.rquest
+  http(data) {
+    const {
+      header: header = {},
+      method: method = 'get',
+      params,
+      success,
+      fail,
+    } = data;
+    let {
+      url
+    } = data
+    // 某些场合需要单独调用某个域名的接口，若没有调用则使用如下的统一域名
+    if (!/http/.test(url)) {
+      url = 'http://xxx.xxx:8088' + url
+    }
+    wx.request({
+      method,
+      url,
+      data: params,
+      header: {
+        'content-type': 'application/json',
+        'Authorization': 'Hewitt',
+        ...header
+      },
+      success: function(res) {
+        success(res)
+      },
+      fail: function () {
+        if (fail) {
+          fail();
+        } else {
+          wx.hideLoading();
+        }
+      }
+    })
   }
 })

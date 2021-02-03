@@ -1,4 +1,14 @@
-/* pages/menu/menu.wxss */
-.scan{
-  margin: 10px;
+.menu-container{
+  width: 90%;
+  margin: 30rpx 5%;
+}
+.menu-container >view{
+  margin: 30rpx 0;
+}
+.navigator-box{
+  padding: 24rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fff;
+  background-color: #1aad19;
 }

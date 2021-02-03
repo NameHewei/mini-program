@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../components/ec-canvas/ec-canvas",
+    "custom-ech": "../component/ech/ech"
+  }
+}

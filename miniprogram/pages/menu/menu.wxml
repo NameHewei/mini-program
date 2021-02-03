@@ -1,12 +1,35 @@
-<!--pages/menu/menu.wxml-->
-<view class="scan">
+<view class="menu-container">
   <view>
-    <button type="primary" bindtap="handleScan">scan code</button>
+    <button type="primary" bindtap="onRouter" data-url="/pages/scan/scan" >扫描</button>
   </view>
-  <view>scan result: {{ scanResult }}</view>
-
+  <view class="navigator-box">
+    <navigator url="/pages/upDownLoad/upDownLoad">上拉下拉</navigator>
+  </view>
   <view>
-    <text>自定义组件</text>
-    <custom></custom>
+    <button type="primary" bindtap="onRouter" data-url="/pages/echart/echart" >echart</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/uChart/uChart" >uchart</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/picker/picker" >picker</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/wxs/wxs" >wxs</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/media/media" >图片视频</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/component/component" >组件、模板、include</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/packageA/pages/pA/pA" >分包</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/webView/webView" >web-view</button>
+  </view>
+  <view>
+    <button type="primary" bindtap="onRouter" data-url="/pages/drawBoard/drawBoard" >canvas 画板</button>
   </view>
 </view>

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    currentPage: 1,
+    dataList: [],
   },
 
   /**
@@ -19,7 +20,18 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    console.log('attached')
+    const arr = [];
 
+    for (let i = 0; i < 16; i++) {
+      arr.push({
+        id: 'id' + i, num: `num:${i}`, cd: [{ id: 11, num: '121233', name: 'namemem' }]
+      })
+    }
+
+    this.setData({
+      dataList: arr
+    })
   },
 
   /**
@@ -44,17 +56,37 @@ Page({
   },
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
+ * 页面相关事件处理函数--监听用户下拉动作
+ */
   onPullDownRefresh: function () {
-
+    this.setData({
+      currentPage: 1
+    })
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    const arr = []
+    for(let i = 0; i<10;i++) {
+      const id = Math.random() 
+      arr.push({
+        id: id + 10,
+        num: Math.random(),
+        cd: [{
+          id: 13,
+          num: '01213233',
+          name: '0namemem'
+        }]
+      })
+    }
 
+    this.setData({
+      currentPage: this.data.currentPage + 1,
+      dataList: [...this.data.dataList, ...arr]
+    })
+    console.log(this.data.currentPage)
   },
 
   /**

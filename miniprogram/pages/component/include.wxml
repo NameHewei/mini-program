@@ -1,0 +1,3 @@
+<view>
+  <text>这是 include 方式，不能传值</text>
+</view>

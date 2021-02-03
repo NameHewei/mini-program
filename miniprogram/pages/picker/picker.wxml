@@ -1,0 +1,26 @@
+<view class="custom-h1">纯数组</view>
+<view>
+  <picker bindchange="bindArrayPicker" value="arrayIndex" range="{{ arrayList }}">
+    <view>
+      选择：{{ arrayList[arrayIndex] }}
+    </view>
+  </picker>
+</view>
+
+<view class="custom-h1">对象数组</view>
+<view>
+  <picker bindchange="bindPickerChange" mode="selector" value="pickerValue" range="{{ objectArray }}" range-key="name">
+    <view>
+      select选择：{{ objectArray[pickerValue].name }}
+    </view>
+  </picker>
+</view>
+
+<view class="custom-h1">日期</view>
+<view>
+  <picker bindchange="timePickerChange" mode="date" value="pickerDateValue" start="2015-09-01" end="2020-09-01">
+    <view>
+      日期选择：{{ pickerDateValue }}
+    </view>
+  </picker>
+</view>

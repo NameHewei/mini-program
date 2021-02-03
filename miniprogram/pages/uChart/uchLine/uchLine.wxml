@@ -1,0 +1,9 @@
+<view class="e-chart-container">
+  <view style="margin-top: 20px;">
+    <view class="er-wrapper">
+      <text type="primary" class="enlarge-reduce" bindtap="enlarge">+</text>
+      <text type="primary" class="enlarge-reduce" bindtap="reduce">-</text>
+    </view>
+    <canvas canvas-id="{{ canvasId }}" id="{{ canvasId }}" class="charts" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd"></canvas>
+  </view>
+</view>
